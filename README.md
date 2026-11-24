@@ -30,6 +30,10 @@ mvn spring-boot:run
 
 Use JDK 8 and Maven 3.6.3+. `mvn clean verify` starts a local test server and checks the JSON response. `mvn spring-boot:run` starts on 127.0.0.1:8080; call `curl -i http://127.0.0.1:8080/sample/error`.
 
+#### Postman API
+
+Call GET http://localhost:8080/sample/error with no body. Expected: HTTP 400 and JSON with error "Bad Request" and message "Sample invalid request". The existing functional route and error handler process this request.
+
 ## KR
 
 ### 프로젝트 구조
@@ -57,3 +61,7 @@ mvn spring-boot:run
 ```
 
 JDK 8과 Maven 3.6.3 이상을 사용합니다. `mvn clean verify`는 로컬 테스트 서버에서 JSON 오류 응답을 확인합니다. `mvn spring-boot:run`은 127.0.0.1:8080에서 실행되며 `curl -i http://127.0.0.1:8080/sample/error`로 확인할 수 있습니다.
+
+#### Postman API
+
+본문 없이 GET http://localhost:8080/sample/error를 호출하세요. 예상 결과: HTTP 400이며 error "Bad Request"와 message "Sample invalid request"가 담긴 JSON입니다. 기존 functional route와 오류 처리기가 이 요청을 처리합니다.
